@@ -43,6 +43,9 @@ class CaclCubit extends Cubit<CaclState> {
 
   //Funcation
   void clear() {
+    if (answer != "0") {
+      oldValues.add(OldValueModel(inputUser: inputUser, value: answer));
+    }
     inputUser = "";
     answer = "0";
     emit(ClearState());
